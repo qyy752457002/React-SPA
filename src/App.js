@@ -1,14 +1,14 @@
 import React from 'react';
-import { Outlet } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import './index.css';
+// import { AppRouter } from './router/index.js';
 
 const App = () => {
   return (
     <div>
       <Navbar />
-      <Outlet /> {/* React Router 中的占位符，用于渲染匹配的子路由 */}
+      {/* <AppRouter /> */}
       <Footer />
     </div>
   );

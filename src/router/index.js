@@ -1,22 +1,19 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-
+import { BrowserRouter as Route, Routes } from 'react-router-dom';
 import SchedulePage from '../views/SchedulePage';
 import LeaderboardPage from '../views/LeaderboardPage';
 import NotFoundPage from '../views/NotFoundPage';
 
 const AppRouter = () => {
   return (
-    <Router>
-      <Switch>
-        <Route exact path="/" component={SchedulePage} />
-        <Route exact path="/schedule" component={SchedulePage} />
-        <Route exact path="/leaderboard" component={LeaderboardPage} />
-        {/* Fallback route for 404 Not Found */}
-        <Route path="*" component={NotFoundPage} />
-      </Switch>
-    </Router>
+    <Routes>
+      <Route exact path="/" element={<SchedulePage />} />
+      <Route exact path="/schedule" element={<SchedulePage />} />
+      <Route exact path="/leaderboard" element={<LeaderboardPage />} />
+      {/* Fallback route for 404 Not Found */}
+      <Route path="*" element={<NotFoundPage />} />
+    </Routes>
   );
 };
 
-export default AppRouter;
+export { AppRouter };
